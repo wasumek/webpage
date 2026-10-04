@@ -14,7 +14,7 @@ export const site = {
   doodleUrl: "https://doodle.com/bp/wasumekniran/discover-sanafin",
   linkedin: "https://linkedin.com/company/sanafin",
   careers: "https://wellfound.com/company/sanafin",
-  ceo: { name: "Wasu Mekniran", firstName: "Wasu", title: "CEO" },
+  ceo: { name: "Dr. Wasu Mekniran", firstName: "Wasu", title: "CEO" },
   // Public address, also on the imprint. Deck requests and contact go here.
   contactEmail: "hello@sanafin.tech",
   // Owner input: legal entity, street and UID replace this line when supplied.

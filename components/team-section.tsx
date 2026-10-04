@@ -16,17 +16,17 @@ import niklausProfile from "@/components/ui/profiles/niklaus_profile.webp"
 
 const team = [
   {
-    name: "Wasu Mekniran",
+    name: "Dr. Wasu Mekniran",
     title: "CEO",
-    owns: "Owns the verification model and the payer conversations.",
+    owns: "Designs the verification model and leads the payer conversations.",
     credential: "PhD in healthcare financing, ETH Zurich · researcher at HSG · first author on the EDEN papers",
     photo: wasuProfile,
     linkedin: "https://www.linkedin.com/in/wasumekniran/",
   },
   {
-    name: "Susanne Oudbier",
+    name: "Dr. Susanne Oudbier",
     title: "Chief Medical Officer",
-    owns: "Owns outcome definitions and clinical sign-off.",
+    owns: "Defines the outcomes and signs off on the clinical side.",
     credential: "MD PhD · resident physician at HOCH Ostschweiz",
     photo: susanProfile,
     linkedin: "https://www.linkedin.com/in/susanoudbier/",
@@ -34,7 +34,7 @@ const team = [
   {
     name: "Anej Rozman",
     title: "Quantitative Scientist",
-    owns: "Owns the risk and health-economic models.",
+    owns: "Develops the risk and health-economic models.",
     credential: "MSc Quantitative Finance, UZH/ETH",
     photo: anejProfile,
     linkedin: "https://www.linkedin.com/in/anej-rozman/",
@@ -51,9 +51,9 @@ const team = [
 
 const advisors = [
   {
-    name: "Ajintha Pathmanathan",
+    name: "Dr. Ajintha Pathmanathan",
     role: "Clinical advisor",
-    facts: ["Dr. med., MPH", "20+ years of medical leadership across UK, US and Australian systems"],
+    facts: ["MD, MPH", "20+ years of medical leadership across UK, US and Australian systems"],
     photo: ajinthaProfile,
     linkedin: "https://www.linkedin.com/in/ajintha-p-02177750/",
   },
