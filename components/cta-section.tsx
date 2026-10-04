@@ -34,7 +34,7 @@ export function CTASection() {
 
               <div className="flex flex-col rounded-3xl bg-white/90 p-6 backdrop-blur">
                 <p className="text-[13px] text-[#766d67] mb-2">Investors</p>
-                <p className="flex-1 text-[17px] leading-snug text-[#1f1a17] mb-5">Investing in Swiss digital health or fintech infrastructure?</p>
+                <p className="flex-1 text-[17px] leading-snug text-[#1f1a17] mb-5">Investing in healthcare payments or fintech infrastructure?</p>
                 <Link
                   href="#investors"
                   data-cta="request_deck"

@@ -5,6 +5,7 @@ import { ProblemSection } from "@/components/problem-section"
 import { HowItWorks } from "@/components/how-it-works"
 import { FounderNote } from "@/components/founder-note"
 import { WhyNowSection } from "@/components/why-now-section"
+import { MarketLadder } from "@/components/market-ladder"
 import { OutcomeStudio } from "@/components/outcome-studio"
 import { ExampleContracts } from "@/components/example-contracts"
 import { TeamSection } from "@/components/team-section"
@@ -24,6 +25,7 @@ export default function Home() {
           <Hero />
           <ProblemSection />
           <WhyNowSection />
+          <MarketLadder />
           <HowItWorks />
           <FounderNote />
           <OutcomeStudio />

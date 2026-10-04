@@ -10,7 +10,7 @@ import { Plus } from "lucide-react"
 const groups = [
   {
     id: "manufacturers",
-    label: "Digital health",
+    label: "Manufacturers",
     faqs: [
       {
         q: "What does Sanafin cost?",
@@ -57,8 +57,8 @@ const groups = [
     label: "Investors",
     faqs: [
       {
-        q: "How big is this beyond Swiss digital health?",
-        a: "Switzerland is the proving ground: its reimbursement bar is among the strictest in Europe, and clearing it is the credential. The same conditional-settlement layer applies to German DiGA price components that are now performance-linked by law, and later to gene and cell therapies.",
+        q: "How big is this beyond Swiss digital therapeutics?",
+        a: "Switzerland is the proving ground, not the market: its reimbursement bar is among the strictest in Europe, and clearing it is the credential. The same layer settles the German app prices that are performance-linked by law since January 2026, the Swiss medicine rebates opened for consultation under Art. 52b E-KVG, the CMS chronic-care thresholds in the United States, and gene and cell therapies, where paying first and reconciling later runs for eleven years. One contract shape, three jurisdictions, four asset classes.",
       },
       {
         q: "Why not Lyfegen, EY or a rebate platform?",
@@ -66,7 +66,7 @@ const groups = [
       },
       {
         q: "What is the traction today?",
-        a: "Four signed letters of intent with Swiss care partners, a clinical proof of concept running with a Swiss hospital to October 2026, eight publications behind the model, and non-dilutive support from Innosuisse-funded programmes. The next milestones are one funder with a named budget owner and the first CHF committed conditionally.",
+        a: "Four signed letters of intent with Swiss care partners, a clinical proof of concept running with a Swiss hospital to October 2026, eight publications behind the model, and non-dilutive support from Innosuisse-funded programmes. No funder has committed money and no fee has been tested yet. The next milestones are one funder with a named budget owner and the first CHF committed conditionally.",
       },
       {
         q: "How do I get the deck?",

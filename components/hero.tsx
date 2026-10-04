@@ -29,9 +29,9 @@ export function Hero() {
           </h1>
 
           <p className="max-w-2xl text-base sm:text-lg leading-relaxed text-[#6f6660] mb-9">
-            A funder commits money to a digital health outcome before it happens. Sanafin verifies the result against
-            Swiss WZW criteria and instructs settlement the moment the agreed threshold is met. Funds sit with a licensed
-            custody partner, never with Sanafin.
+            A funder commits money to a health outcome before it happens. Sanafin verifies the result against a
+            verdict either side can re-compute and instructs settlement the moment the agreed threshold is met. Funds
+            sit with a licensed custody partner, never with Sanafin.
           </p>
 
           <div className="flex flex-col items-center">
@@ -39,7 +39,7 @@ export function Hero() {
           </div>
 
           <p data-proof-row className="mt-7 text-[13px] text-[#766d67]">
-            For Swiss digital health manufacturers and the insurers, employers and hospitals who fund their evidence ·{" "}
+            For digital therapeutics, medicines and advanced therapies, and the funders behind their evidence ·{" "}
             <Link href="#traction" className="underline decoration-[#d9d1ca] underline-offset-4 hover:text-[#1f1a17]">
               {lois.length} signed letters of intent
             </Link>

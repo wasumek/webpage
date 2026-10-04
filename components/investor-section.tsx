@@ -7,9 +7,10 @@ import { lois } from "@/lib/traction"
 
 
 const inTheDeck = [
-  "Why now: MiGeL Ch. 40, § 134 SGB V, the 31 Dec 2026 deadline",
+  "Why now: three jurisdictions wrote the condition, none built the settlement",
   "How verification, custody and settlement work",
-  "Traction, team, research, the next 18 months",
+  "The ladder: digital therapeutics, then drugs, then advanced therapies",
+  "Traction, team, research, the next 24 months",
 ]
 
 export function InvestorSection() {
@@ -24,8 +25,9 @@ export function InvestorSection() {
               <span className="text-[#1f1a17]/45"> outcome-conditional healthcare payments.</span>
             </h2>
             <p className="text-[15px] sm:text-base leading-relaxed text-[#6f6660] mb-8 max-w-xl">
-              Pre-seed, built on ETH Zurich and HSG research. First market: Swiss digital health manufacturers and
-              the funders behind their evidence. Request the deck and Wasu sends it personally.
+              Pre-seed, built on ETH Zurich and HSG research. The proving ground is Swiss digital therapeutics; the
+              same layer settles outcome-conditional drug payment and advanced therapies. Request the deck and Wasu
+              sends it personally.
             </p>
 
             <p className="text-[13px] text-[#766d67] mb-3">What&apos;s in the deck</p>

@@ -4,13 +4,13 @@
 export const site = {
   name: "Sanafin",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://sanafin.tech",
-  tagline: "Outcome-based payment for digital health.",
-  title: "Sanafin | Outcome-based payment for digital health",
+  tagline: "The settlement layer for healthcare payments that depend on an outcome.",
+  title: "Sanafin | The settlement layer for outcome-based healthcare payments",
   description:
-    "Sanafin lets insurers, employers and hospitals fund a digital health outcome before it happens, verifies the result against Swiss WZW criteria and instructs settlement when the agreed threshold is met. Funds sit with a licensed custody partner, never with Sanafin.",
+    "Sanafin lets insurers, employers and hospitals commit money to a health outcome before it happens, verifies the result against the threshold both sides agreed, and instructs settlement the moment it is met. Digital therapeutics first, then outcome-conditional drug payment and advanced therapies. Funds sit with a licensed custody partner, never with Sanafin.",
   // The one-sentence positioning every section is built on.
   positioning:
-    "Sanafin lets a funder commit money to a health outcome before it happens, verifies the result against Swiss WZW criteria, and instructs settlement the moment the agreed threshold is met. Funds sit with a licensed custody partner, never with Sanafin.",
+    "Sanafin lets a funder commit money to a health outcome before it happens, verifies the result against a verdict either side can re-compute, and instructs settlement the moment the agreed threshold is met. Funds sit with a licensed custody partner, never with Sanafin.",
   doodleUrl: "https://doodle.com/bp/wasumekniran/discover-sanafin",
   linkedin: "https://linkedin.com/company/sanafin",
   careers: "https://wellfound.com/company/sanafin",

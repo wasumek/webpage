@@ -80,6 +80,41 @@ export const sources: Source[] = [
     label: "Mekniran W et al. Health Technology Assessment of Swiss Digital Diabetes Screening — 40-year Markov model, Swiss payer perspective (medRxiv preprint, February 2026)",
     href: "https://doi.org/10.64898/2026.02.10.26345992",
   },
+  {
+    id: "cms-cgt",
+    label: "CMS Cell and Gene Therapy Access Model — outcomes-based agreements negotiated on behalf of 32 states, the District of Columbia and Puerto Rico; settled by rebate over an eleven-year model period",
+    href: "https://www.cms.gov/priorities/innovation/innovation-models/cgt",
+  },
+  {
+    id: "cms-access",
+    label: "CMS ACCESS model, starting 5 July 2026: payment depends on the share of patients meeting biomarker or patient-reported outcome thresholds. Citation to follow.",
+  },
+  {
+    id: "okp-medicines",
+    label: "Mandatory health-insurance (OKP) spend on medicines in 2025: CHF 9.7 bn, about a fifth of all OKP cost (priminfo.admin.ch, FOPH)",
+    href: "https://www.priminfo.admin.ch/",
+  },
+  {
+    id: "kvg-52b",
+    label: "Art. 52b E-KVG — opened for consultation on 18 February 2026 as a legal basis for outcome-based rebates on medicines, with CHF 350 m of targeted annual savings (EDI media release). Citation to follow.",
+  },
+  {
+    id: "glp1-discontinuation",
+    label: "Gasoyan et al., Obesity (2025): 52% of patients starting a GLP-1 for weight management discontinue within twelve months. Citation to follow.",
+  },
+  {
+    id: "diga-repayment",
+    label: "GKV-Spitzenverband, DiGA-Bericht 2025: more than EUR 25 m of repayment claims at risk on prescription apps paid before proof of benefit, with nine manufacturers insolvent",
+    href: "https://www.gkv-spitzenverband.de/krankenversicherung/digitalisierung/kv_diga/diga.jsp",
+  },
+  {
+    id: "atmp-spend",
+    label: "IQVIA Institute (13 March 2024): USD 5.9 bn spent on advanced therapies in 2023, growing about 65% a year. Citation to follow.",
+  },
+  {
+    id: "dtx-study-budgets",
+    label: "Digital-therapeutic study budgets available a year in Switzerland, about CHF 6 m: Sanafin estimate from published FOPH decisions and funder conversations, not third-party research",
+  },
 ]
 
 export function sourceNumber(id: string): number {
