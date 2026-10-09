@@ -65,7 +65,7 @@ export function DemoBooking({ initialRole }: { initialRole?: string }) {
           </span>
           <div>
             <p className="text-[15px] font-medium text-[#1f1a17]">{site.ceo.name}</p>
-            <p className="text-[13px] text-[#6f6660]">{site.ceo.title} · PhD in healthcare financing, ETH Zurich · researcher at HSG</p>
+            <p className="text-[13px] text-[#6f6660]">{site.ceo.title} · PhD in healthcare financing, ETH Zurich</p>
           </div>
         </div>
 
@@ -79,12 +79,7 @@ export function DemoBooking({ initialRole }: { initialRole?: string }) {
           ))}
         </ol>
 
-        <figure className="mt-8 overflow-hidden rounded-3xl bg-[#f5f1ed] p-4 pb-0">
-          <img src="/media/demo-window.svg" alt="Outcome Studio concept: a dashboard with an outcome-contract panel" className="w-full" loading="lazy" />
-          <figcaption className="sr-only">Illustrative concept, not live data</figcaption>
-        </figure>
-        <p className="mt-2 text-[12px] text-[#766d67]">Outcome Studio · illustrative concept, not live data</p>
-        <p className="mt-4 text-[12.5px] text-[#766d67]">Timeline is our target. NDA on request; nothing you share is used outside this conversation.</p>
+        <p className="mt-6 text-[12.5px] text-[#766d67]">Timeline is our target. NDA on request; nothing you share is used outside this conversation.</p>
       </div>
 
       <aside className="lg:col-span-6 lg:pl-6">

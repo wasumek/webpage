@@ -12,8 +12,8 @@ const columns = [
     title: "Product",
     links: [
       { href: "/#how", label: "How it works" },
-      { href: "/#product", label: "Outcome Studio" },
-      { href: "/#examples", label: "Example contracts" },
+      { href: "/#anywhere", label: "Any care, anywhere" },
+      { href: "/#examples", label: "The metabolic template" },
       { href: "/eden-framework", label: "EDEN framework" },
       { href: "/api-docs", label: "API documentation" },
     ],
@@ -23,7 +23,7 @@ const columns = [
     links: [
       { href: "/#investors", label: "For investors" },
       { href: "/#team", label: "Team" },
-      { href: "/#traction", label: "Partners & recognition" },
+      { href: "/#traction", label: "Evidence & partners" },
       { href: "/demo", label: "Book a discovery call" },
       { href: site.careers, label: "Careers", external: true },
     ],

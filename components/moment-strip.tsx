@@ -26,7 +26,7 @@ const steps = [
     icon: Landmark,
     label: "Settlement instruction issued",
     value: example.milestones[0].amount,
-    meta: "custody partner → manufacturer",
+    meta: "custody partner → provider",
     tone: "orange",
   },
 ] as const

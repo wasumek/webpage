@@ -23,15 +23,14 @@ export function Hero() {
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           <h1 className="font-display text-[2.6rem] leading-[1.04] sm:text-[3.6rem] lg:text-[4.3rem] text-[#1f1a17] mb-6">
-            Money moves{" "}
+            Pay for verified care,{" "}
             <br className="hidden sm:block" />
-            <span className="font-serif italic font-normal text-[#1f1a17]/55">when outcomes do.</span>
+            from anywhere.
           </h1>
 
           <p className="max-w-2xl text-base sm:text-lg leading-relaxed text-[#6f6660] mb-9">
-            A funder commits money to a health outcome before it happens. Sanafin verifies the result against a
-            verdict either side can re-compute and instructs settlement the moment the agreed threshold is met. Funds
-            sit with a licensed custody partner, never with Sanafin.
+            Sanafin lets any payer, anywhere, buy verified health outcomes. The money is committed up front and
+            released only when an independent evaluation confirms the result.
           </p>
 
           <div className="flex flex-col items-center">
@@ -39,7 +38,7 @@ export function Hero() {
           </div>
 
           <p data-proof-row className="mt-7 text-[13px] text-[#766d67]">
-            For digital therapeutics, medicines and advanced therapies, and the funders behind their evidence ·{" "}
+            Started with metabolic health in Switzerland ·{" "}
             <Link href="#traction" className="underline decoration-[#d9d1ca] underline-offset-4 hover:text-[#1f1a17]">
               {lois.length} signed letters of intent
             </Link>

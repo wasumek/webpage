@@ -4,9 +4,7 @@ import { Recognition } from "@/components/recognition"
 import { ProblemSection } from "@/components/problem-section"
 import { HowItWorks } from "@/components/how-it-works"
 import { FounderNote } from "@/components/founder-note"
-import { WhyNowSection } from "@/components/why-now-section"
-import { MarketLadder } from "@/components/market-ladder"
-import { OutcomeStudio } from "@/components/outcome-studio"
+import { AnywhereSection } from "@/components/anywhere-section"
 import { ExampleContracts } from "@/components/example-contracts"
 import { TeamSection } from "@/components/team-section"
 import { InvestorSection } from "@/components/investor-section"
@@ -24,14 +22,12 @@ export default function Home() {
         <main id="main" className="landing-page">
           <Hero />
           <ProblemSection />
-          <WhyNowSection />
-          <MarketLadder />
           <HowItWorks />
           <FounderNote />
-          <OutcomeStudio />
+          <AnywhereSection />
+          <Recognition />
           <ExampleContracts />
           <TeamSection />
-          <Recognition />
           <InvestorSection />
           <FAQSection />
           <CTASection />

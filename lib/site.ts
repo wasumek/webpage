@@ -4,13 +4,13 @@
 export const site = {
   name: "Sanafin",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://sanafin.tech",
-  tagline: "The settlement layer for healthcare payments that depend on an outcome.",
-  title: "Sanafin | The settlement layer for outcome-based healthcare payments",
+  tagline: "Pay for verified care, from anywhere.",
+  title: "Sanafin | Pay for verified care, from anywhere",
   description:
-    "Sanafin lets insurers, employers and hospitals commit money to a health outcome before it happens, verifies the result against the threshold both sides agreed, and instructs settlement the moment it is met. Digital therapeutics first, then outcome-conditional drug payment and advanced therapies. Funds sit with a licensed custody partner, never with Sanafin.",
+    "Sanafin lets any payer, anywhere, buy verified health outcomes. Insurers, employers and governments commit a capped budget to a care pathway; an independent cost-effectiveness evaluation checks the result against the threshold both sides agreed; payment is released only on a pass. Started with metabolic health in Switzerland. Funds sit with a licensed custody partner, never with Sanafin.",
   // The one-sentence positioning every section is built on.
   positioning:
-    "Sanafin lets a funder commit money to a health outcome before it happens, verifies the result against a verdict either side can re-compute, and instructs settlement the moment the agreed threshold is met. Funds sit with a licensed custody partner, never with Sanafin.",
+    "Sanafin lets any payer, anywhere, buy verified health outcomes: the payer commits a capped budget, a provider delivers the care, an independent evaluation verifies the outcome, and payment is released only when it is met. Funds sit with a licensed custody partner, never with Sanafin.",
   doodleUrl: "https://doodle.com/bp/wasumekniran/discover-sanafin",
   linkedin: "https://linkedin.com/company/sanafin",
   careers: "https://wellfound.com/company/sanafin",

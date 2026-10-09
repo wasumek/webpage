@@ -79,8 +79,8 @@ export const lois: Loi[] = [
     country: "Switzerland",
     focus: "Diabetes care proof of concept",
     signed: "Jun 2026",
-    status: "Running to Oct 2026",
-    stage: 2,
+    status: "Under way",
+    stage: 3,
   },
   {
     partnerType: "Swiss digital health company",

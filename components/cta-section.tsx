@@ -14,13 +14,13 @@ export function CTASection() {
 
           <div className="relative px-5 py-8 sm:px-8 md:px-12 md:py-16">
             <h2 id="closing-title" className="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.1] text-[#1f1a17] mb-8 max-w-2xl">
-              Fund the outcome, not the promise.
+              Pay for the outcome, not the activity.
             </h2>
 
             <div className="grid gap-4 md:grid-cols-2 md:max-w-3xl">
               <div className="flex flex-col rounded-3xl bg-white/90 p-6 backdrop-blur">
-                <p className="text-[13px] text-[#766d67] mb-2">Manufacturers, insurers, hospitals</p>
-                <p className="flex-1 text-[17px] leading-snug text-[#1f1a17] mb-5">Design your first outcome-conditional contract in a 25-minute call.</p>
+                <p className="text-[13px] text-[#766d67] mb-2">Payers and care providers</p>
+                <p className="flex-1 text-[17px] leading-snug text-[#1f1a17] mb-5">Scope a pilot: one payer, one cohort, one pathway, in a 25-minute call.</p>
                 <Link
                   href="/demo"
                   data-cta="book_call"

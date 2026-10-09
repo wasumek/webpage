@@ -9,8 +9,8 @@ import { CTA } from "@/lib/site"
 
 const navLinks = [
   { href: "/#how", label: "How it works" },
-  { href: "/#product", label: "Product" },
-  { href: "/#why-now", label: "Why now" },
+  { href: "/#anywhere", label: "Anywhere" },
+  { href: "/#traction", label: "Evidence" },
   { href: "/#team", label: "Team" },
   { href: "/#faq", label: "FAQ" },
 ]

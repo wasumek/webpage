@@ -13,6 +13,11 @@ export type Source = {
 
 export const sources: Source[] = [
   {
+    id: "idf-atlas",
+    label: "International Diabetes Federation, IDF Diabetes Atlas, 11th edition (2025): diabetes accounted for USD 1.015 trillion of health expenditure in 2024, 12% of global health expenditure, adults aged 20–79",
+    href: "https://diabetesatlas.org/",
+  },
+  {
     id: "sgb5-134",
     label: "§ 134 SGB V — from 1 January 2026 at least 20% of a DiGA's reimbursement price must depend on measured performance",
     href: "https://www.gesetze-im-internet.de/sgb_5/__134.html",
@@ -87,7 +92,8 @@ export const sources: Source[] = [
   },
   {
     id: "cms-access",
-    label: "CMS ACCESS model, starting 5 July 2026: payment depends on the share of patients meeting biomarker or patient-reported outcome thresholds. Citation to follow.",
+    label: "CMS ACCESS (Advancing Chronic Care with Effective, Scalable Solutions) Model — began 5 July 2026 and runs ten years; outcome targets are set on biomarkers such as blood pressure, HbA1c, lipids or weight, or on validated patient-reported outcome measures (PROMs)",
+    href: "https://www.cms.gov/priorities/innovation/innovation-models/access",
   },
   {
     id: "okp-medicines",
@@ -96,11 +102,13 @@ export const sources: Source[] = [
   },
   {
     id: "kvg-52b",
-    label: "Art. 52b E-KVG — opened for consultation on 18 February 2026 as a legal basis for outcome-based rebates on medicines, with CHF 350 m of targeted annual savings (EDI media release). Citation to follow.",
+    label: "Art. 52b E-KVG — consultation on the second cost-containment package opened 18 February 2026, consolidating the legal basis for price models with reimbursements and extending it to MiGeL and the analysis list. FOPH: \"Das Ziel ist, jährlich rund 350 Millionen Franken einzusparen.\"",
+    href: "https://www.bag.admin.ch/de/newnsb/lCw7tC_x3NSVit2XLLYny",
   },
   {
     id: "glp1-discontinuation",
-    label: "Gasoyan et al., Obesity (2025): 52% of patients starting a GLP-1 for weight management discontinue within twelve months. Citation to follow.",
+    label: "Gasoyan H et al., Changes in weight and glycemic control following obesity treatment with semaglutide or tirzepatide by discontinuation status, Obesity (2025), doi:10.1002/oby.24331. Real-world cohort of 7,881 US adults (Cleveland Clinic, Ohio and Florida). Discontinuation within twelve months: 53.0% on semaglutide (21.6% early, 31.4% late) and 50.6% on tirzepatide (16.4% early, 34.1% late)",
+    href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12381620/",
   },
   {
     id: "diga-repayment",
@@ -109,7 +117,8 @@ export const sources: Source[] = [
   },
   {
     id: "atmp-spend",
-    label: "IQVIA Institute (13 March 2024): USD 5.9 bn spent on advanced therapies in 2023, growing about 65% a year. Citation to follow.",
+    label: "IQVIA Institute, Strengthening Pathways for Cell and Gene Therapies (March 2024): USD 5.9 bn spent on cell and gene therapies in 2023, up 38% on the year and averaging 65% annual growth over five years; 62% of it in the United States",
+    href: "https://www.iqvia.com/insights/the-iqvia-institute/reports-and-publications/reports/strengthening-pathways-for-cell-and-gene-therapies",
   },
   {
     id: "dtx-study-budgets",

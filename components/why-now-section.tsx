@@ -12,7 +12,7 @@ const events = [
     region: "United States",
     stat: "32 states",
     title: "CMS negotiated outcomes for gene therapy",
-    body: "The Cell and Gene Therapy Access Model negotiates outcomes-based agreements on behalf of 32 states, DC and Puerto Rico. It settles by rebate, over an eleven-year model period.",
+    body: "CMS negotiates outcomes-based agreements for 32 states, DC and Puerto Rico. It settles by rebate, over eleven years.",
     sources: [["cms-cgt", "CMS · CGT Access Model"]],
     past: true,
   },
@@ -21,7 +21,7 @@ const events = [
     region: "Germany",
     stat: "≥ 20%",
     title: "Outcome-linked pricing became law for apps",
-    body: "At least 20% of a prescription app's price must now depend on measured performance (§ 134 SGB V). How it settles is left to the parties, and no product has implemented it yet.",
+    body: "At least 20% of an app's price must depend on measured performance (§ 134 SGB V). How it settles is left to the parties. No product has done it yet.",
     sources: [
       ["sgb5-134", "§ 134 SGB V"],
       ["bfarm-digig", "BfArM"],
@@ -34,7 +34,7 @@ const events = [
     region: "Switzerland",
     stat: "CHF 350M",
     title: "A legal basis for outcome rebates on medicines opened",
-    body: "Art. 52b E-KVG went to consultation with CHF 350M of targeted annual savings attached: the first Swiss rule that makes a medicine's price depend on the result.",
+    body: "Art. 52b E-KVG went to consultation with CHF 350M of annual savings attached — the first Swiss rule tying a medicine's price to the result.",
     sources: [["kvg-52b", "Art. 52b E-KVG"]],
     past: true,
   },
@@ -43,7 +43,7 @@ const events = [
     region: "Switzerland",
     stat: "MiGeL Ch. 40",
     title: "A reimbursement path opens, with a proof requirement",
-    body: "Product group 40 opened for digital health applications. The first listing was admitted under evaluation only to 31 December 2026, judged on effectiveness, appropriateness and economy.",
+    body: "Product group 40 opened for digital health applications. The first listing was admitted under evaluation only, to 31 December 2026.",
     sources: [["migel-40", "FOPH · MiGeL"]],
     past: true,
   },
@@ -52,7 +52,7 @@ const events = [
     region: "United States",
     stat: "Thresholds",
     title: "Chronic care payment tied to measured results",
-    body: "The CMS ACCESS model starts. Payment depends on the share of patients meeting biomarker or patient-reported outcome thresholds, well beyond drugs and devices.",
+    body: "The CMS ACCESS model starts. Payment depends on the share of patients meeting biomarker or PROM thresholds — well beyond drugs and devices.",
     sources: [["cms-access", "CMS · ACCESS model"]],
     past: true,
   },
@@ -61,7 +61,7 @@ const events = [
     region: "Germany",
     stat: "Evidence due",
     title: "The first outcome data falls due",
-    body: "Fifteen months after the pricing rule, the first performance data is due. The pricing deadline and the evidence deadline do not line up, and nothing holds the money in between.",
+    body: "Fifteen months after the pricing rule, the first performance data is due. The deadlines do not line up, and nothing holds the money in between.",
     sources: [["sgb5-134", "§ 134 SGB V"]],
     past: false,
   },
@@ -77,14 +77,13 @@ export function WhyNowSection() {
           <Reveal className="lg:sticky lg:top-32 lg:self-start">
             <p className="text-[13px] text-[#766d67] mb-4">Why now</p>
             <h2 id="why-now-title" className="font-display text-4xl sm:text-5xl leading-[1.04] text-[#1f1a17] mb-6">
-              Three jurisdictions wrote outcome-based payment into their rules.
+              Three jurisdictions wrote the rule.
               <br />
-              <span className="text-[#1f1a17]/45">None of them built the settlement.</span>
+              <span className="text-[#1f1a17]/45">None built the settlement.</span>
             </h2>
             <p className="max-w-md text-base sm:text-lg leading-relaxed text-[#6f6660]">
-              Within two years the United States, Germany and Switzerland moved from paying for access to paying for
-              results — for gene therapy, for prescription apps, for medicines and for chronic care. Every one of them
-              wrote the condition and left out the settlement.
+              In two years the US, Germany and Switzerland moved from paying for access to paying for results —
+              gene therapy, apps, medicines, chronic care. Every one wrote the condition and left out the settlement.
             </p>
           </Reveal>
 

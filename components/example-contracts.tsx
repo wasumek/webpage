@@ -3,18 +3,26 @@ import { ArrowRight, Check } from "lucide-react"
 import { Fn } from "@/components/fn"
 import { contracts } from "@/lib/examples"
 
-// One example contract, the type 2 diabetes case, next to the pilot offer. Illustrative
-// structures, not customer data; clinical thresholds are footnoted.
+// The wedge: one metabolic-health template (the type 2 diabetes contract) next to the
+// pilot offer. Illustrative structure, not customer data; clinical thresholds are footnoted.
 
 const pilot = {
-  scope: ["One funder, one manufacturer", "One cohort, one pre-agreed threshold"],
+  scope: [
+    "One payer, one cohort, one pathway",
+    "Fixed downside: the committed budget is the cap",
+    "Measurable upside: a share of the verified savings",
+  ],
   timeline: [
     ["Day 0", "Discovery call"],
-    ["Week 1", "Data connected, threshold agreed"],
+    ["Week 1", "Data connected, threshold and price agreed"],
     ["Week 2", "Rules live, first verification report"],
-    ["Months 3–12", "Milestones verified and settled"],
+    ["Months 3–12", "Outcomes verified, payment released"],
   ],
-  fit: ["You are heading for a MiGeL Ch. 40 listing or a DiGA price negotiation", "A funder will commit money against a measurable outcome", "Your programme already produces biomarker or claims data"],
+  fit: [
+    "You pay for chronic metabolic care: insurer, employer, government or reinsurer",
+    "You deliver it: a care provider or digital-health programme ready to be paid on results",
+    "The pathway already produces lab, biomarker or claims data",
+  ],
 }
 
 export function ExampleContracts() {
@@ -25,15 +33,12 @@ export function ExampleContracts() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12 grid lg:grid-cols-2 gap-6 lg:gap-16 lg:items-end">
           <div>
-            <p className="text-[13px] text-[#766d67] mb-4">Where we start</p>
-            <h2 id="examples-title" className="font-display text-4xl sm:text-5xl leading-[1.04] text-[#1f1a17]">
-              Metabolic health first.
-              <br />
-              <span className="text-[#1f1a17]/45">Longevity next.</span>
+                        <h2 id="examples-title" className="font-display text-4xl sm:text-5xl leading-[1.04] text-[#1f1a17]">
+              One pathway, written once. Reused by every next payer.
             </h2>
           </div>
           <p className="max-w-md text-[15px] sm:text-base leading-relaxed text-[#6f6660] lg:pb-2">
-            Measurable endpoints, rising spend, funders already asking for conditional terms. One example contract design, not customer data.
+            Metabolic health is the biggest, best-measured and most medication-cost-sensitive target. HbA1c, weight and drug-cost changes over twelve months, at a price per verified unit agreed in advance. Our target: the next payer onboards in days, not months.
           </p>
         </div>
 
@@ -47,7 +52,7 @@ export function ExampleContracts() {
 
               <dl className="grid grid-cols-2 gap-4 pb-5 border-b border-[#f0ebe6]">
                 <div>
-                  <dt className="text-[12px] text-[#766d67]">Committed by the funder</dt>
+                  <dt className="text-[12px] text-[#766d67]">Committed by the payer</dt>
                   <dd className="mt-1 text-xl font-medium tracking-tight text-[#1f1a17]">{c.committed}</dd>
                 </div>
                 <div>
@@ -57,7 +62,7 @@ export function ExampleContracts() {
               </dl>
 
               <div className="py-5 border-b border-[#f0ebe6]">
-                <p className="text-[12px] text-[#766d67] mb-3">Settlement is instructed when</p>
+                <p className="text-[12px] text-[#766d67] mb-3">Payment is released when</p>
                 <ul className="space-y-2">
                   {c.targets.map((t) => (
                     <li key={t.label} className="flex items-start justify-between gap-4 text-[14px]">
@@ -81,7 +86,7 @@ export function ExampleContracts() {
                     </li>
                   ))}
                 </ul>
-                <p className="mt-3 text-[12px] text-[#766d67]">Unmet milestones return to the funder.</p>
+                <p className="mt-3 text-[12px] text-[#766d67]">Unmet milestones return to the payer.</p>
               </div>
 
               <div className="pt-5">
@@ -100,7 +105,7 @@ export function ExampleContracts() {
           {/* Pilot offer */}
           <aside className="flex flex-col lg:pl-6 lg:pt-4">
             <p className="text-[13px] text-[#766d67] mb-3">Start a pilot</p>
-            <h3 className="font-display text-2xl sm:text-3xl text-[#1f1a17] mb-6">One funder, one manufacturer, one outcome.</h3>
+            <h3 className="font-display text-2xl sm:text-3xl text-[#1f1a17] mb-6">Pay only for the outcomes that are verified.</h3>
 
             <p className="text-[13px] text-[#766d67] mb-3">Scope</p>
             <ul className="mb-6 space-y-2">

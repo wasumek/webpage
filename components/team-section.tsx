@@ -19,7 +19,7 @@ const team = [
     name: "Dr. Wasu Mekniran",
     title: "CEO",
     owns: "Designs the verification model and leads the payer conversations.",
-    credential: "PhD in healthcare financing, ETH Zurich · researcher at HSG · first author on the EDEN papers",
+    credential: "PhD in healthcare financing, ETH Zurich · MBA, MSc Computation · first author on the EDEN papers",
     photo: wasuProfile,
     linkedin: "https://www.linkedin.com/in/wasumekniran/",
   },
@@ -79,14 +79,12 @@ export function TeamSection() {
           <div>
             <p className="text-[13px] text-[#766d67] mb-4">Why this team</p>
             <h2 id="team-title" className="font-display text-4xl sm:text-5xl leading-[1.04] text-[#1f1a17]">
-              Four years researching why outcome-based payment stalls.
-              <br />
-              <span className="text-[#1f1a17]/45">Then we built the tool.</span>
+              Four years researching why outcome-based payment stalls. Then we built the tool.
             </h2>
           </div>
           <p className="max-w-md text-[15px] sm:text-base leading-relaxed text-[#6f6660] lg:pb-2">
-            Health economics, clinical outcomes and financial engineering in one team, with eight publications behind
-            the incentive model, the risk structures and the health economics.
+            Health economics, clinical outcomes and financial engineering in one team. Eight publications behind the
+            incentive model and the risk structures.
           </p>
         </div>
 
@@ -172,7 +170,7 @@ export function TeamSection() {
             <div className="mb-5 flex items-end justify-between gap-4">
               <div>
                 <p className="text-[13px] text-[#766d67] mb-1">Selected research</p>
-                <p className="font-display text-2xl text-[#1f1a17]">{publications.length} publications, CEO first author</p>
+                <p className="font-display text-2xl text-[#1f1a17]">{publications.length} publications behind the model</p>
               </div>
               <Link href="/eden-framework" className="hidden sm:inline-flex items-center gap-1 text-[13px] text-[#1f1a17] underline decoration-[#d9d1ca] underline-offset-4 hover:decoration-[#1f1a17]">
                 EDEN framework

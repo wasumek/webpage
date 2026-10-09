@@ -14,7 +14,7 @@ const stages = [
     venue: "Digital therapeutics before listing · Switzerland",
     value: "CHF 6M",
     sourceId: "dtx-study-budgets",
-    body: "of study budgets a year, in a market where seven of eight published decisions were rejected for want of evidence.",
+    body: "Study budgets available a year, in a market where seven of eight published decisions were rejected for want of evidence.",
     bodySourceId: "foph-dga-decisions",
     why: "Cheapest place to prove that a funder will commit money to a threshold.",
   },
@@ -24,7 +24,7 @@ const stages = [
     venue: "Outcome-conditional drug payment · Switzerland, then Germany",
     value: "CHF 350M",
     sourceId: "kvg-52b",
-    body: "of outcome rebates targeted a year under Art. 52b E-KVG, in consultation since February 2026.",
+    body: "Outcome rebates targeted a year under Art. 52b E-KVG, in consultation since February 2026.",
     why: "The same contract, two orders of magnitude more money per arrangement.",
   },
   {
@@ -33,7 +33,7 @@ const stages = [
     venue: "Advanced therapies · Europe, then the United States",
     value: "USD 5.9bn",
     sourceId: "atmp-spend",
-    body: "spent on advanced therapies in 2023, growing about 65% a year. Instalment payment is already the agreed model.",
+    body: "Spent on cell and gene therapies in 2023, after averaging 65% annual growth over five years. Instalment payment is already the agreed model.",
     why: "Where paying first and reconciling later costs the most to get wrong.",
   },
 ]
@@ -52,20 +52,28 @@ export function MarketLadder() {
             </h2>
           </div>
           <p className="max-w-md text-base sm:text-lg leading-relaxed text-[#6f6660] lg:pb-2">
-            The money waits for the outcome, whatever the outcome is about. We start where an outcome is cheapest to
-            prove and move to where paying before the proof costs the most.
+            The money waits for the outcome, whatever the outcome is about. We start where proof is cheapest and
+            move to where paying first costs the most.
           </p>
         </Reveal>
 
         <ol className="border-t border-[#ece7e2]">
           {stages.map((s, i) => (
             <Reveal key={s.stage} delay={i * 0.05}>
-              <li className="grid gap-4 border-b border-[#ece7e2] py-9 md:grid-cols-[13rem_1fr_auto] md:items-baseline md:gap-10">
-                <div>
+              {/* Source order is stage → value → copy so the number leads when this stacks on
+                  a phone. From md up, explicit column placement puts the value back on the
+                  right without changing the DOM. Bodies are written to stand alone rather
+                  than continue the numeral, so they read at either width. */}
+              <li className="grid gap-3 border-b border-[#ece7e2] py-9 md:grid-cols-[13rem_1fr_auto] md:items-baseline md:gap-10">
+                <div className="md:col-start-1 md:row-start-1">
                   <p className="text-[15px] font-medium text-[#1f1a17]">{s.stage}</p>
                   <p className="font-mono text-[12px] text-[#766d67]">{s.when}</p>
                 </div>
-                <div className="max-w-xl">
+                <p className="font-display text-4xl sm:text-5xl text-[#1f1a17] md:col-start-3 md:row-start-1 md:text-right">
+                  {s.value}
+                  <Fn id={s.sourceId} />
+                </p>
+                <div className="max-w-xl md:col-start-2 md:row-start-1">
                   <p className="text-[13px] text-[#0f766e] mb-2">{s.venue}</p>
                   <p className="text-[15px] sm:text-base leading-snug text-[#1f1a17]">
                     {s.body}
@@ -73,10 +81,6 @@ export function MarketLadder() {
                   </p>
                   <p className="mt-2 text-[14px] leading-snug text-[#766d67]">{s.why}</p>
                 </div>
-                <p className="font-display text-4xl sm:text-5xl text-[#1f1a17] md:text-right">
-                  {s.value}
-                  <Fn id={s.sourceId} />
-                </p>
               </li>
             </Reveal>
           ))}
