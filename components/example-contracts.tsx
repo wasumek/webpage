@@ -1,155 +1,99 @@
 import Link from "next/link"
-import { ArrowRight, Check } from "lucide-react"
-import { Fn } from "@/components/fn"
-import { contracts } from "@/lib/examples"
+import { ArrowRight } from "lucide-react"
+import { example } from "@/lib/examples"
+import { CTA } from "@/lib/site"
 
-// The wedge: one metabolic-health template (the type 2 diabetes contract) next to the
-// pilot offer. Illustrative structure, not customer data; clinical thresholds are footnoted.
+// The wedge in one glance: the metabolic template as a single contract card (the
+// money as one bar, split into what is released and what is still held) next to a
+// three-line pilot offer. Uses the shared example dataset, labelled illustrative.
 
-const pilot = {
-  scope: [
-    "One payer, one cohort, one pathway",
-    "Fixed downside: the committed budget is the cap",
-    "Measurable upside: a share of the verified savings",
-  ],
-  timeline: [
-    ["Day 0", "Discovery call"],
-    ["Week 1", "Data connected, threshold and price agreed"],
-    ["Week 2", "Rules live, first verification report"],
-    ["Months 3–12", "Outcomes verified, payment released"],
-  ],
-  fit: [
-    "You pay for chronic metabolic care: insurer, employer, government or reinsurer",
-    "You deliver it: a care provider or digital-health programme ready to be paid on results",
-    "The pathway already produces lab, biomarker or claims data",
-  ],
-}
+const offer = [
+  ["Downside", "Capped at the committed budget"],
+  ["Upside", "A share of the verified savings"],
+  ["Live", "In two weeks, our target"],
+] as const
+
+// CHF amounts as numbers, for the bar widths
+const amount = (s: string) => Number(s.replace(/[^\d]/g, ""))
 
 export function ExampleContracts() {
-  const c = contracts[0]
+  const total = example.milestones.reduce((sum, m) => sum + amount(m.amount), 0)
 
   return (
     <section id="examples" aria-labelledby="examples-title" className="relative scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-12 grid lg:grid-cols-2 gap-6 lg:gap-16 lg:items-end">
-          <div>
-                        <h2 id="examples-title" className="font-display text-4xl sm:text-5xl leading-[1.04] text-[#1f1a17]">
-              One pathway, written once. Reused by every next payer.
-            </h2>
-          </div>
-          <p className="max-w-md text-[15px] sm:text-base leading-relaxed text-[#6f6660] lg:pb-2">
-            Metabolic health is the biggest, best-measured and most medication-cost-sensitive target. HbA1c, weight and drug-cost changes over twelve months, at a price per verified unit agreed in advance. Our target: the next payer onboards in days, not months.
+        <div className="mx-auto mb-12 max-w-2xl text-center">
+          <h2 id="examples-title" className="font-display text-4xl sm:text-5xl leading-[1.04] text-[#1f1a17] mb-5">
+            One pathway, written once.
+          </h2>
+          <p className="text-base sm:text-lg leading-relaxed text-[#6f6660]">
+            Metabolic health first: HbA1c, weight and drug costs over twelve months, at a price per verified outcome
+            agreed up front. Every next payer reuses it.
           </p>
         </div>
 
-        <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-          {/* Tabbed contract */}
-          <div className="self-start">
-            <div className="rounded-3xl border border-[#ece7e2] bg-white p-6 sm:p-7">
-              <p className="text-[12px] text-[#766d67] mb-1">Example contract · illustrative</p>
-              <h3 className="font-display text-2xl text-[#1f1a17] mb-1">{c.name}</h3>
-              <p className="text-[14px] text-[#6f6660] mb-6">{c.population}</p>
+        <div className="grid gap-4 lg:grid-cols-[1.25fr_0.75fr]">
+          {/* The contract, as a card */}
+          <div className="rounded-3xl border border-[#ece7e2] bg-white p-6 sm:p-8">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+              <p className="text-lg font-medium text-[#1f1a17]">Type 2 diabetes</p>
+              <p className="font-mono text-[12px] text-[#766d67]">
+                {example.cohort} patients · {example.duration} · {example.committed}
+              </p>
+            </div>
 
-              <dl className="grid grid-cols-2 gap-4 pb-5 border-b border-[#f0ebe6]">
-                <div>
-                  <dt className="text-[12px] text-[#766d67]">Committed by the payer</dt>
-                  <dd className="mt-1 text-xl font-medium tracking-tight text-[#1f1a17]">{c.committed}</dd>
-                </div>
-                <div>
-                  <dt className="text-[12px] text-[#766d67]">Duration</dt>
-                  <dd className="mt-1 text-xl font-medium tracking-tight text-[#1f1a17]">{c.duration}</dd>
-                </div>
-              </dl>
+            <div className="mt-6 flex flex-col gap-1 rounded-2xl bg-[#f5f1ed] px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+              <p className="text-[14px] text-[#1f1a17]">{example.threshold.label}</p>
+              <p className="font-mono text-[13px] text-[#0f766e]">{example.threshold.value} ✓</p>
+            </div>
 
-              <div className="py-5 border-b border-[#f0ebe6]">
-                <p className="text-[12px] text-[#766d67] mb-3">Payment is released when</p>
-                <ul className="space-y-2">
-                  {c.targets.map((t) => (
-                    <li key={t.label} className="flex items-start justify-between gap-4 text-[14px]">
-                      <span className="text-[#1f1a17]">{t.label}</span>
-                      <span className="text-right font-medium text-[#0f766e]">
-                        {t.threshold}
-                        {"sourceId" in t && t.sourceId ? <Fn id={t.sourceId} /> : null}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+            <div className="mt-8" role="img" aria-label={`${example.committed} committed: CHF 60,000 released at month 6, CHF 120,000 still held`}>
+              <div className="flex h-3 gap-1 overflow-hidden rounded-full">
+                {example.milestones.map((m) => (
+                  <span
+                    key={m.label}
+                    className={m.status === "Released" ? "bg-[#14b8a6]" : "bg-[#e9e3dd]"}
+                    style={{ width: `${(amount(m.amount) / total) * 100}%` }}
+                  />
+                ))}
               </div>
-
-              <div className="py-5 border-b border-[#f0ebe6]">
-                <p className="text-[12px] text-[#766d67] mb-3">Release schedule</p>
-                <ul className="space-y-2">
-                  {c.milestones.map((m) => (
-                    <li key={m.text} className="flex items-center justify-between text-[14px]">
-                      <span className="text-[#6f6660]">{m.text}</span>
-                      <span className="text-[#1f1a17]">{m.amount}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-3 text-[12px] text-[#766d67]">Unmet milestones return to the payer.</p>
-              </div>
-
-              <div className="pt-5">
-                <p className="text-[12px] text-[#766d67] mb-2">Evidence from</p>
-                <ul className="flex flex-wrap gap-1.5">
-                  {c.sources.map((s) => (
-                    <li key={s} className="rounded-full bg-[#f5f1ed] px-2.5 py-1 text-[12px] text-[#6f6660]">
-                      {s}
-                    </li>
-                  ))}
-                </ul>
+              <div className="mt-3 flex gap-1">
+                {example.milestones.map((m) => (
+                  <div key={m.label} className="min-w-0" style={{ width: `${(amount(m.amount) / total) * 100}%` }}>
+                    <p className={`font-mono text-[12px] tabular-nums ${m.status === "Released" ? "text-[#0f766e]" : "text-[#1f1a17]"}`}>
+                      {m.amount.replace("CHF ", "")}
+                    </p>
+                    <p className="truncate text-[12px] text-[#766d67]">{m.status}</p>
+                  </div>
+                ))}
               </div>
             </div>
+
+            <p className="mt-8 text-[12px] text-[#766d67]">Illustrative contract. Anything not verified goes back to the payer.</p>
           </div>
 
-          {/* Pilot offer */}
-          <aside className="flex flex-col lg:pl-6 lg:pt-4">
-            <p className="text-[13px] text-[#766d67] mb-3">Start a pilot</p>
-            <h3 className="font-display text-2xl sm:text-3xl text-[#1f1a17] mb-6">Pay only for the outcomes that are verified.</h3>
-
-            <p className="text-[13px] text-[#766d67] mb-3">Scope</p>
-            <ul className="mb-6 space-y-2">
-              {pilot.scope.map((s) => (
-                <li key={s} className="flex gap-2.5 text-[14px] text-[#1f1a17]">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#0f766e]" aria-hidden="true" />
-                  {s}
-                </li>
+          {/* The pilot offer */}
+          <div className="flex flex-col rounded-3xl bg-[#1f1a17] p-6 text-white sm:p-8">
+            <p className="font-display text-2xl leading-snug sm:text-3xl">One payer, one cohort, one pathway.</p>
+            <dl className="mt-8 divide-y divide-white/10 border-y border-white/10">
+              {offer.map(([k, v]) => (
+                <div key={k} className="flex items-baseline justify-between gap-4 py-3">
+                  <dt className="text-[13px] text-white/55">{k}</dt>
+                  <dd className="text-right text-[14.5px]">{v}</dd>
+                </div>
               ))}
-            </ul>
-
-            <p className="text-[13px] text-[#766d67] mb-3">Timeline · our target</p>
-            <ol className="mb-6 divide-y divide-[#f0ebe6] rounded-2xl border border-[#f0ebe6]">
-              {pilot.timeline.map(([when, what]) => (
-                <li key={when} className="flex items-center gap-4 px-4 py-2.5 text-[14px]">
-                  <span className="w-24 shrink-0 font-mono text-[12px] text-[#766d67]">{when}</span>
-                  <span className="text-[#1f1a17]">{what}</span>
-                </li>
-              ))}
-            </ol>
-
-            <p className="text-[13px] text-[#766d67] mb-3">A pilot fits if</p>
-            <ul className="mb-8 space-y-2">
-              {pilot.fit.map((s) => (
-                <li key={s} className="flex gap-2.5 text-[14px] text-[#6f6660]">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d9d1ca]" aria-hidden="true" />
-                  {s}
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-auto flex flex-col gap-3">
-              <Link
-                href="/demo"
-                data-cta="book_call"
-                data-location="pilot"
-                className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-full bg-[#1f1a17] px-6 py-2.5 text-[15px] font-medium text-white transition-colors hover:bg-[#3a322d]"
-              >
-                Scope a pilot on a call
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
-              <p className="text-center text-[12px] text-[#766d67]">Commercials on the call · NDA on request</p>
-            </div>
-          </aside>
+            </dl>
+            <div className="flex-1" aria-hidden="true" />
+            <Link
+              href="/demo"
+              data-cta="book_call"
+              data-location="pilot"
+              className="mt-8 inline-flex min-h-11 items-center justify-center gap-1.5 rounded-full bg-white px-6 py-2.5 text-[15px] font-medium text-[#1f1a17] transition-colors hover:bg-[#f1ece7]"
+            >
+              {CTA.buyer}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

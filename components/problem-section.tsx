@@ -43,11 +43,11 @@ export function ProblemSection() {
         <ul className="grid grid-cols-1 gap-10 border-t border-[#ece7e2] pt-10 md:grid-cols-3 md:gap-12">
           {facts.map((f) => (
             <li key={f.value}>
-              <p className="font-display text-5xl sm:text-6xl text-[#1f1a17]">
-                {f.value}
+              <p className="font-display text-5xl sm:text-6xl text-[#1f1a17]">{f.value}</p>
+              <p className="mt-3 max-w-xs text-[15px] leading-snug text-[#6f6660]">
+                {f.label}
                 <Fn id={f.sourceId} />
               </p>
-              <p className="mt-3 max-w-xs text-[15px] leading-snug text-[#6f6660]">{f.label}</p>
             </li>
           ))}
         </ul>

@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { AppPreview, MobileContractCard } from "@/components/app-preview"
+import { AwardBadge } from "@/components/award-badge"
 import { HeroCtas } from "@/components/hero-ctas"
 import { MomentStrip } from "@/components/moment-strip"
 import { Reveal } from "@/components/reveal"
@@ -12,7 +13,8 @@ import { backers, lois } from "@/lib/traction"
 // product floating on a soft glow with the recognition row beneath. Rendered on
 // the server so the headline and CTAs are in the first HTML.
 export function Hero() {
-  const heroBackers = backers.filter((b) => b.inHero)
+  // The award has its own badge under the CTAs; the row carries the programmes
+  const heroBackers = backers.filter((b) => b.inHero && b.relationship !== "Award")
 
   return (
     <section id="top" className="relative overflow-hidden bg-[#fbfaf8] pt-28 md:pt-40 !pb-0">
@@ -43,6 +45,8 @@ export function Hero() {
               {lois.length} signed letters of intent
             </Link>
           </p>
+
+          <AwardBadge className="mt-8" />
         </div>
 
         {/* Product on a soft glow */}
@@ -74,7 +78,7 @@ export function Hero() {
 
         {/* Recognition row */}
         <div className="mx-auto mt-14 md:mt-16 flex max-w-4xl flex-col items-center gap-5 border-t border-[#ece7e2] pt-8">
-          <p className="text-[12px] text-[#766d67]">Recognised by Swiss innovation programmes · Research from ETH Zurich and HSG</p>
+          <p className="text-[12px] text-[#766d67]">Supported by Swiss innovation programmes · Research from ETH Zurich and HSG</p>
           <ul className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
             {heroBackers.map((b) => (
               <li key={b.name} className="flex flex-col items-center gap-2">

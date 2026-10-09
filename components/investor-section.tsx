@@ -7,10 +7,9 @@ import { lois } from "@/lib/traction"
 
 
 const inTheDeck = [
-  "The problem: payers buy activity, not results",
-  "How evaluation, custody and payment release work",
-  "Metabolic health in Switzerland first, then any pathway, any payer",
-  "Evidence, team, research, the next 24 months",
+  "Why payers switch to paying for results",
+  "How evaluation and payment release work",
+  "Traction, team and the next 24 months",
 ]
 
 export function InvestorSection() {
@@ -21,11 +20,10 @@ export function InvestorSection() {
           <div className="flex flex-col p-4 sm:p-6">
             <p className="text-[13px] text-[#766d67] mb-4">For investors</p>
             <h2 id="investors-title" className="font-display text-4xl sm:text-5xl leading-[1.04] text-[#1f1a17] mb-6">
-              Let any payer, anywhere, buy verified health outcomes.
+              The deck, sent personally.
             </h2>
-            <p className="text-[15px] sm:text-base leading-relaxed text-[#6f6660] mb-8 max-w-xl">
-              Pre-seed, built on ETH Zurich and HSG research. Metabolic health in Switzerland is the proving ground;
-              the same template works for any pathway and any payer. Request the deck — Wasu sends it personally.
+            <p className="text-[15px] sm:text-base leading-relaxed text-[#6f6660] mb-8 max-w-md">
+              Pre-seed, built on ETH Zurich and HSG research. Wasu, the CEO, replies within one working day.
             </p>
 
             <p className="text-[13px] text-[#766d67] mb-3">What&apos;s in the deck</p>

@@ -1,6 +1,7 @@
 // Footnote registry. Every figure on the site points at one of these entries via
-// <Fn id="…" />, and the footer renders the numbered "Notes & sources" list from
-// the same array, so numbering can never drift. Order here = footnote number.
+// <Fn id="…" />. The registry order does not matter: footnote numbers come from
+// `cited` below, which lists the sources in the order they appear on the page, and
+// the footer's "Notes & sources" renders that same list, so numbering cannot drift.
 
 export type Source = {
   id: string
@@ -126,10 +127,25 @@ export const sources: Source[] = [
   },
 ]
 
+// Sources cited on the landing page, in order of first appearance, top to bottom.
+// Citing a source that is missing here fails the build, so add it in reading order.
+export const cited = [
+  "idf-atlas", // Problem
+  "glp1-discontinuation",
+  "diga-repayment",
+  "sgb5-134", // Any care, anywhere
+  "kvg-52b",
+  "cms-access",
+] as const
+
 export function sourceNumber(id: string): number {
-  const i = sources.findIndex((s) => s.id === id)
-  if (i === -1) throw new Error(`Unknown source id: ${id}`)
+  const i = (cited as readonly string[]).indexOf(id)
+  if (i === -1) throw new Error(`Source "${id}" is cited but missing from \`cited\` in lib/sources.ts`)
   return i + 1
+}
+
+export function citedSources(): Source[] {
+  return cited.map((id) => getSource(id))
 }
 
 export function getSource(id: string): Source {

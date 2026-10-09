@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowUpRight, Linkedin } from "lucide-react"
+import { Linkedin } from "lucide-react"
 import { publications } from "@/lib/research"
 
 import wasuProfile from "@/components/ui/profiles/wasu_profile.webp"
@@ -83,8 +83,11 @@ export function TeamSection() {
             </h2>
           </div>
           <p className="max-w-md text-[15px] sm:text-base leading-relaxed text-[#6f6660] lg:pb-2">
-            Health economics, clinical outcomes and financial engineering in one team. Eight publications behind the
-            incentive model and the risk structures.
+            Health economics, clinical outcomes and financial engineering in one team, with{" "}
+            <Link href="/eden-framework" className="text-[#1f1a17] underline decoration-[#d9d1ca] underline-offset-4 hover:decoration-[#1f1a17]">
+              {publications.length} publications
+            </Link>{" "}
+            behind the model.
           </p>
         </div>
 
@@ -164,50 +167,6 @@ export function TeamSection() {
           </ul>
         </div>
 
-        {/* Research */}
-        <div className="mt-14">
-          <div className="rounded-3xl border border-[#ece7e2] bg-white p-7">
-            <div className="mb-5 flex items-end justify-between gap-4">
-              <div>
-                <p className="text-[13px] text-[#766d67] mb-1">Selected research</p>
-                <p className="font-display text-2xl text-[#1f1a17]">{publications.length} publications behind the model</p>
-              </div>
-              <Link href="/eden-framework" className="hidden sm:inline-flex items-center gap-1 text-[13px] text-[#1f1a17] underline decoration-[#d9d1ca] underline-offset-4 hover:decoration-[#1f1a17]">
-                EDEN framework
-                <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-              </Link>
-            </div>
-            <ol className="divide-y divide-[#f0ebe6]">
-              {publications.slice(0, 3).map((p) => (
-                <li key={p.doi} className="grid gap-1 py-3 sm:grid-cols-[3.5rem_1fr_auto] sm:items-baseline sm:gap-4">
-                  <span className="font-mono text-[12px] text-[#766d67]">{p.year}</span>
-                  <span>
-                    <span className="block text-[14px] leading-snug text-[#1f1a17]">{p.title}</span>
-                    <span className="block text-[12px] text-[#766d67]">
-                      {p.authors}
-                      {p.venue ? ` · ${p.venue}` : ""}
-                    </span>
-                  </span>
-                  <a
-                    href={`https://doi.org/${p.doi}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-0.5 font-mono text-[11px] text-[#766d67] hover:text-[#1f1a17]"
-                    aria-label={`DOI ${p.doi}`}
-                  >
-                    DOI
-                    <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
-                  </a>
-                </li>
-              ))}
-            </ol>
-            <p className="mt-5 text-[12px] leading-relaxed text-[#766d67]">
-              Research carried out by the founding team at ETH Zurich, the University of St. Gallen and HOCH Ostschweiz.
-              Institutions do not endorse Sanafin.
-            </p>
-          </div>
-
-        </div>
       </div>
     </section>
   )
