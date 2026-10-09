@@ -1,6 +1,7 @@
 import type { StaticImageData } from "next/image"
 
 import innoboosterLogo from "@/components/ui/logo/innobooster.png"
+import innosuisseCoachingLogo from "@/components/ui/logo/innosuisse-initial-coaching.png"
 import kickfoundationLogo from "@/components/ui/logo/kickfoundation_pos_farbe.png"
 import sicLogo from "@/components/ui/logo/SIC-logo.png"
 import sftaLogo from "@/components/ui/logo/sfta_logo.png"
@@ -16,6 +17,8 @@ export type Backer = {
   sourceUrl?: string
   // Shown in the hero proof row
   inHero?: boolean
+  // Logo height in that row, for lockups that need more room to stay legible
+  logoClass?: string
 }
 
 export type Loi = {
@@ -43,6 +46,17 @@ export const backers: Backer[] = [
     description: "Winner. Innosuisse-funded programme, CHF 20,000 non-dilutive.",
     sourceUrl: "https://ibsdf.ch/",
     inHero: true,
+    logoClass: "h-12",
+  },
+  {
+    name: "Innosuisse Initial Coaching",
+    shortName: "Innosuisse",
+    logo: innosuisseCoachingLogo,
+    relationship: "Coaching",
+    description: "Initial Coaching supported by Innosuisse, the Swiss Innovation Agency.",
+    sourceUrl: "https://www.innosuisse.admin.ch/",
+    inHero: true,
+    logoClass: "h-[68px]",
   },
   {
     name: "Kick Foundation",

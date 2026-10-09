@@ -13,7 +13,7 @@ import { backers, lois } from "@/lib/traction"
 // product floating on a soft glow with the recognition row beneath. Rendered on
 // the server so the headline and CTAs are in the first HTML.
 export function Hero() {
-  // The award has its own badge under the CTAs; the row carries the programmes
+  // The award is the emblem; the row lists the programmes behind it
   const heroBackers = backers.filter((b) => b.inHero && b.relationship !== "Award")
 
   return (
@@ -43,10 +43,13 @@ export function Hero() {
             Started with metabolic health in Switzerland ·{" "}
             <Link href="#traction" className="underline decoration-[#d9d1ca] underline-offset-4 hover:text-[#1f1a17]">
               {lois.length} signed letters of intent
+            </Link>{" "}
+            ·{" "}
+            <Link href="#recognition" className="underline decoration-[#d9d1ca] underline-offset-4 hover:text-[#1f1a17]">
+              Winner, Innovation Booster
             </Link>
           </p>
 
-          <AwardBadge className="mt-8" />
         </div>
 
         {/* Product on a soft glow */}
@@ -76,19 +79,27 @@ export function Hero() {
           </div>
         </Reveal>
 
-        {/* Recognition row */}
-        <div className="mx-auto mt-14 md:mt-16 flex max-w-4xl flex-col items-center gap-5 border-t border-[#ece7e2] pt-8">
-          <p className="text-[12px] text-[#766d67]">Supported by Swiss innovation programmes · Research from ETH Zurich and HSG</p>
-          <ul className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
-            {heroBackers.map((b) => (
-              <li key={b.name} className="flex flex-col items-center gap-2">
-                <Image src={b.logo} alt={b.name} className="h-7 w-auto object-contain opacity-80" style={{ width: "auto" }} />
-                <span className={`text-[11px] ${b.relationship === "Award" ? "font-medium text-[#1f1a17]" : "text-[#766d67]"}`}>
-                  {b.relationship === "Award" ? "Winner" : b.relationship}
-                </span>
-              </li>
-            ))}
-          </ul>
+        {/* Recognition: the award emblem leads, the programmes follow (Intercom / Vanta
+            pattern: badges grouped with recognition, not floated over the hero) */}
+        <div
+          id="recognition"
+          className="mx-auto mt-14 flex max-w-5xl scroll-mt-28 flex-col items-center gap-8 border-t border-[#ece7e2] pt-10 md:mt-16 md:flex-row md:items-center md:justify-center md:gap-12"
+        >
+          <AwardBadge zoom={0.72} className="shrink-0" />
+          <span className="hidden h-24 w-px bg-[#ece7e2] md:block" aria-hidden="true" />
+          <div className="flex flex-col items-center gap-5 md:items-start">
+            <p className="text-center text-[12px] text-[#766d67] md:text-left">
+              Supported by Swiss innovation programmes · Research from ETH Zurich and HSG
+            </p>
+            <ul className="flex flex-wrap items-end justify-center gap-x-10 gap-y-6 md:justify-start">
+              {heroBackers.map((b) => (
+                <li key={b.name} className="flex flex-col items-center gap-2">
+                  <Image src={b.logo} alt={b.name} className={`${b.logoClass ?? "h-8"} w-auto object-contain opacity-90`} style={{ width: "auto" }} />
+                  <span className="text-[11px] text-[#766d67]">{b.relationship}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       <div className="h-8 md:h-12" aria-hidden="true" />

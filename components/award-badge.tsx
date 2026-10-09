@@ -1,46 +1,48 @@
 import Image from "next/image"
 import stamp from "@/components/ui/logo/ibsdf-stamp.png"
-import wordmark from "@/components/ui/logo/ibsdf-wordmark.png"
 
-// The Innovation Booster win, shown the way award sites do it (Origin pattern): the
-// programme's own marks between two laurel branches. Official marks only: the
-// Innosuisse "Innovation Booster" stamp and the Sustainable Digital Finance wordmark
-// from ibsdf.ch.
+// The Innovation Booster win as an award emblem (G2 / Wellfound pattern): a shield
+// with the programme's own stamp, a ribbon in the Sustainable Digital Finance green
+// (#2bb157, sampled from the official wordmark) and the award name. Drawn in SVG,
+// text in HTML on top so it stays crisp. 140 × 196 at zoom 1. Placed upright and in
+// the flow, centred above the hero headline (Wellfound / Rivian pattern).
 
-function Laurel({ flip = false }: { flip?: boolean }) {
-  // Seven leaves along a gentle arc, drawn once and mirrored for the right side
-  const leaves = [0, 1, 2, 3, 4, 5, 6]
-  return (
-    <svg viewBox="0 0 24 56" className={`h-12 w-auto shrink-0 sm:h-16 text-[#b5aaa0] ${flip ? "-scale-x-100" : ""}`} aria-hidden="true">
-      <path d="M18 54 C 6 44, 4 24, 12 4" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-      {leaves.map((i) => {
-        const t = i / 6
-        const y = 50 - t * 44
-        const x = 16 - Math.sin(t * Math.PI) * 9 + t * 2
-        return <ellipse key={i} cx={x - 3.5} cy={y} rx="4.2" ry="1.9" transform={`rotate(${-35 - t * 30} ${x - 3.5} ${y})`} fill="currentColor" />
-      })}
-    </svg>
-  )
-}
+const GREEN = "#2bb157"
+const GREEN_DARK = "#1e8a43"
 
-export function AwardBadge({ className = "" }: { className?: string }) {
+// `zoom` scales the whole emblem and its layout box together (unlike a transform).
+export function AwardBadge({ className = "", zoom = 1 }: { className?: string; zoom?: number }) {
   return (
     <a
       href="https://ibsdf.ch/"
       target="_blank"
       rel="noopener noreferrer"
-      className={`group inline-flex items-center gap-2 ${className}`}
       aria-label="Winner of the Innovation Booster Sustainable Digital Finance, powered by Innosuisse"
+      style={{ zoom }}
+      className={`group relative block h-[196px] w-[140px] transition-transform duration-300 hover:-translate-y-0.5 ${className}`}
     >
-      <Laurel />
-      <span className="flex items-center gap-2.5 text-left sm:gap-3.5">
-        <Image src={stamp} alt="" className="h-11 w-11 shrink-0 sm:h-14 sm:w-14" />
-        <span className="flex flex-col gap-1">
-          <span className="whitespace-nowrap text-[10.5px] font-medium uppercase tracking-[0.1em] text-[#1f1a17] sm:text-[12px] sm:tracking-[0.14em]">Winner · Innovation Booster</span>
-          <Image src={wordmark} alt="Sustainable Digital Finance" className="h-[16px] w-auto sm:h-[20px]" style={{ width: "auto" }} />
-        </span>
+      <svg viewBox="0 0 140 196" className="absolute inset-0 h-full w-full overflow-visible drop-shadow-[0_14px_24px_rgba(47,36,31,0.22)]" aria-hidden="true">
+        {/* Shield: straight sides past the text, then the point */}
+        <path d="M12 2 H128 a8 8 0 0 1 8 8 V148 L70 194 L4 148 V10 a8 8 0 0 1 8 -8 Z" fill="#fff" stroke="#e3dcd5" strokeWidth="1" />
+        <path d="M14 7 H126 a5 5 0 0 1 5 5 V145.6 L70 187.8 L9 145.6 V12 a5 5 0 0 1 5 -5 Z" fill="none" stroke={GREEN} strokeOpacity="0.3" strokeWidth="0.8" />
+        {/* Banner across the middle: tails behind, folds, band in front */}
+        <path d="M-10 92 H12 V114 H-10 L-3 103 Z" fill={GREEN_DARK} />
+        <path d="M150 92 H128 V114 H150 L143 103 Z" fill={GREEN_DARK} />
+        <path d="M0 108 L12 114 V108 Z M140 108 L128 114 V108 Z" fill="#14532d" fillOpacity="0.7" />
+        <path d="M0 86 H140 V108 H0 Z" fill={GREEN} />
+      </svg>
+
+      <span className="absolute inset-x-0 top-[14px] flex justify-center">
+        <Image src={stamp} alt="" className="h-[64px] w-[64px]" />
       </span>
-      <Laurel flip />
+      <span className="absolute inset-x-0 top-[86px] flex h-[22px] items-center justify-center text-[11px] font-semibold uppercase tracking-[0.24em] text-white">
+        Winner
+      </span>
+      <span className="absolute inset-x-4 top-[118px] text-center text-[11px] font-semibold leading-[1.2] text-[#1f1a17]">
+        Sustainable
+        <br />
+        Digital Finance
+      </span>
     </a>
   )
 }
